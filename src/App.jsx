@@ -604,7 +604,7 @@ export default function Portfolio() {
             <div className="pk-hero-visual">
               <HeroCanvas />
               <p className="f-mono pk-canvas-caption">
-                {"// drag to rotate — auto-orbits when idle"}
+                { "// Full  stack developer with a focus on React.js and MERN stack applications."}
               </p>
             </div>
           </div>

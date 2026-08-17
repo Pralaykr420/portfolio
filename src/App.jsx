@@ -134,7 +134,8 @@ const PROJECTS = [
     icon: Layers,
     color: "orange",
     desc: "A personal portfolio built to showcase projects and professional background, with a focus on unique design, clean code, and fast performance.",
-    tech: ["React", "Tailwind CSS", "JavaScript"],
+    tech: ["React", "Tailwind CSS", "JavaScript", "Three.js"],
+    link: "https://pralay-kumar-mahata-portfolio.vercel.app/",
   },
 ];
 
@@ -720,8 +721,8 @@ export default function Portfolio() {
             <div className="pk-projects-grid">
               {PROJECTS.map((p, i) => {
                 const Icon = p.icon;
-                return (
-                  <Reveal delay={i * 90} key={p.file} className={`pk-project-card pk-c-${p.color}`}>
+                const content = (
+                  <>
                     <div className="pk-project-head">
                       <span className="pk-project-icon">
                         <Icon size={18} />
@@ -738,6 +739,18 @@ export default function Portfolio() {
                         </span>
                       ))}
                     </div>
+                  </>
+                );
+
+                return p.link ? (
+                  <Reveal delay={i * 90} key={p.file} className={`pk-project-card pk-c-${p.color}`}>
+                    <a href={p.link} target="_blank" rel="noreferrer" className="pk-project-link">
+                      {content}
+                    </a>
+                  </Reveal>
+                ) : (
+                  <Reveal delay={i * 90} key={p.file} className={`pk-project-card pk-c-${p.color}`}>
+                    {content}
                   </Reveal>
                 );
               })}
@@ -1072,6 +1085,9 @@ const CSS = `
 .pk-project-card {
   background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 22px;
   transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.pk-project-link {
+  display: block; color: inherit; text-decoration: none;
 }
 .pk-project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -20px rgba(0,0,0,0.55); }
 .pk-c-purple .pk-project-icon { color: var(--purple); background: rgba(180,144,245,0.12); }

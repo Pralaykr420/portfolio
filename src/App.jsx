@@ -108,6 +108,7 @@ const PROJECTS = [
     color: "purple",
     desc: "A functional e-commerce platform with product browsing, a dynamic shopping cart, user authentication, and a secure checkout simulation — built with a fully responsive UI.",
     tech: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
+    link: "https://e-commerce-client-two-eosin.vercel.app/",
   },
   {
     file: "weather.project.js",
